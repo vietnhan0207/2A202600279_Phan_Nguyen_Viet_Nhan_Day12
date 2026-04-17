@@ -58,6 +58,10 @@ curl http://localhost:8000/ask -X POST \
   -H "Content-Type: application/json" \
   -d '{"question": "Hello"}'
 ```
+Should use this : 
+```bash
+curl.exe -X POST "http://localhost:8000/ask?question=HELLO"
+```
 
 **Expected:** You get a response! 🎉
 
@@ -69,8 +73,8 @@ curl http://localhost:8000/ask -X POST \
 cd ../../02-docker/develop
 
 # Build image
-docker build -t my-agent .
-
+docker build -f 02-docker/develop/Dockerfile -t my-agent .
+ 
 # Run container
 docker run -p 8000:8000 my-agent
 ```
